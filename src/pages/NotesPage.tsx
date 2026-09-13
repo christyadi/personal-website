@@ -1,0 +1,2 @@
+import { getNotes } from '../lib/content/repository'
+export function NotesPage() { return <section className="page-frame"><div className="page-heading"><div><p className="eyebrow">DOCUMENTATION SYSTEM / 04</p><h1>Notes</h1></div><p>Short engineering observations from the work in progress.</p></div><div className="notes-list">{getNotes().map((note) => <article className="note" key={note.id}><span className="mono">{note.id}</span><div><p className="note-topic">{note.topic}</p><h2>{note.title}</h2><p>{note.excerpt}</p></div></article>)}</div></section> }

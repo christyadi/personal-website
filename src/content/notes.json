@@ -1,0 +1,5 @@
+[
+  {"id": "NOTE-01", "title": "Retrieval is an interface problem", "topic": "Applied AI", "excerpt": "Good retrieval is not only about ranking; it is about helping a person inspect why a result appeared."},
+  {"id": "NOTE-02", "title": "Planning systems need visible constraints", "topic": "System design", "excerpt": "Schedules become more useful when exceptions and assumptions are as legible as the plan itself."},
+  {"id": "NOTE-03", "title": "Useful abstractions leave traces", "topic": "Engineering", "excerpt": "The best system boundaries simplify routine work while preserving enough evidence to debug the unusual case."}
+]

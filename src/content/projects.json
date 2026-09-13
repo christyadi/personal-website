@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "job-intelligence",
+    "name": "Job Intelligence",
+    "shortName": "job-intelligence",
+    "status": "active",
+    "type": "AI / RAG",
+    "featured": true,
+    "version": "0.3.0",
+    "year": 2026,
+    "role": "Full-stack / AI Engineering",
+    "description": "A RAG-based system for collecting, indexing and reasoning over job descriptions.",
+    "technologies": ["Python", "FastAPI", "PostgreSQL", "Docker", "LlamaIndex"],
+    "sections": {
+      "context": "Job descriptions are valuable but scattered: a role disappears, a company changes its wording, and trends are hard to compare once the original page is gone.",
+      "problem": "Create a durable research surface that supports both exact filtering and semantic questions without turning a small research tool into an overbuilt data platform.",
+      "solution": "The system stores normalized job records alongside searchable document chunks. A retrieval layer grounds questions in the stored postings and returns the source material needed to inspect an answer.",
+      "implementation": "Ingestion is isolated from query-time work. A lightweight API coordinates extraction, validation, embedding and retrieval; the interface is deliberately thin so research remains the primary workflow.",
+      "challenges": "Job pages vary wildly in structure. The ingestion boundary therefore keeps raw source material and a normalized record, making extraction failures visible rather than silently losing context.",
+      "outcome": "A compact, inspectable prototype for comparing roles and investigating recurring requirements across a changing job market.",
+      "nextIteration": "Improve source attribution, add evaluation fixtures for retrieval quality, and make collection provenance more visible."
+    },
+    "decisions": [
+      {"id": "001", "title": "Relational records + vector search", "decision": "Keep normalized job metadata and embeddings close together.", "reasoning": "Research needs structured filters and semantic retrieval in the same workflow.", "alternative": "Separate vector database."},
+      {"id": "002", "title": "Evidence-first answers", "decision": "Return retrieval context with every generated response.", "reasoning": "It makes the system useful for research instead of presenting an opaque answer.", "alternative": "Answer-only chat interface."}
+    ],
+    "architecture": ["Job sources", "Ingestion + normalization", "PostgreSQL + vectors", "Retrieval + answer synthesis"]
+  },
+  {
+    "slug": "resource-planner",
+    "name": "Internal Project & Resource Planning Platform",
+    "shortName": "resource-planner",
+    "status": "stable",
+    "type": "Full-stack",
+    "featured": true,
+    "version": "1.0.0",
+    "year": 2025,
+    "role": "Software Engineer",
+    "description": "An internal planning platform for making project capacity, assignments and scheduling constraints visible.",
+    "technologies": ["Java", "React", "PostgreSQL", "REST API", "Docker"],
+    "sections": {
+      "context": "Project plans often live across spreadsheets, calendar discussions and individual assumptions. Small changes create a large amount of coordination work.",
+      "problem": "Give project leads a reliable view of capacity and allocation while retaining the concrete constraints behind every planning decision.",
+      "solution": "A shared planning model combines projects, people, assignments and time periods into one interface. Users can inspect changes before they become conflicts.",
+      "implementation": "The domain is modeled around scheduling concepts rather than screens. The React interface consumes a focused API and treats planning tables as a workflow, not a dashboard decoration.",
+      "challenges": "Scheduling logic becomes confusing when business rules are hidden in the UI. Rules were kept explicit in the domain layer and exposed in the interface where they affect a decision.",
+      "outcome": "A clearer operating picture for teams managing competing commitments and a foundation for incremental planning improvements.",
+      "nextIteration": "Add scenario comparison and make capacity assumptions easier to audit over time."
+    },
+    "decisions": [
+      {"id": "001", "title": "Domain-led scheduling model", "decision": "Model assignments and availability as first-class entities.", "reasoning": "It keeps planning rules consistent across reports and edits.", "alternative": "Store a separate schedule shape for every screen."},
+      {"id": "002", "title": "Explainable conflicts", "decision": "Show the constraint behind an allocation warning.", "reasoning": "A warning is only useful when a planner can act on it.", "alternative": "Color-only capacity indicators."}
+    ],
+    "architecture": ["React planning client", "Java application service", "Scheduling domain", "PostgreSQL"]
+  },
+  {
+    "slug": "backend-engineers-workstation",
+    "name": "Backend Engineer's Workstation",
+    "shortName": "portfolio",
+    "status": "experimental",
+    "type": "Frontend",
+    "featured": true,
+    "version": "1.0.0",
+    "year": 2026,
+    "role": "Design + Frontend Engineering",
+    "description": "A static, JSON-driven portfolio designed like an internal engineering workstation.",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "Zod"],
+    "sections": {
+      "context": "Most portfolios compress a body of engineering work into a familiar marketing layout. This one asks whether a portfolio can feel more like a useful technical artifact.",
+      "problem": "Present project thinking with a distinct visual language without obscuring the content behind dashboard theatre or decorative UI.",
+      "solution": "A static content repository drives reusable routes, a service registry and a command palette. The interface uses editorial whitespace and precise table-like structure instead of generic card grids.",
+      "implementation": "Content is validated with Zod at startup, then queried through a tiny in-memory repository. React Router resolves data-driven project pages and the production build remains static.",
+      "outcome": "A portfolio that can grow by adding content rather than new bespoke screens."
+    },
+    "decisions": [
+      {"id": "001", "title": "JSON as the content database", "decision": "Keep primary content in local JSON files.", "reasoning": "The site needs no runtime service and remains easy to deploy anywhere.", "alternative": "Headless CMS."}
+    ],
+    "architecture": ["JSON content", "Zod validation", "React components", "Static Vite build"]
+  }
+]

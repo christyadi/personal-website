@@ -1,0 +1,4 @@
+[
+  {"version": "v1.0.0", "date": "2026.09.14", "items": [{"type": "ADDED", "text": "Backend workstation visual system"}, {"type": "ADDED", "text": "Data-driven project registry and command palette"}, {"type": "FIXED", "text": "Portfolio previously looked too normal"}]},
+  {"version": "v0.3.0", "date": "2026.09.10", "items": [{"type": "CHANGED", "text": "Job Intelligence architecture documented"}, {"type": "ADDED", "text": "Retrieval evaluation fixtures"}]}
+]
