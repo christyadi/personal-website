@@ -12,18 +12,20 @@ import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
 	return (
-		<Routes>
-			<Route element={<AppLayout />}>
-				<Route index element={<HomePage />} />
-				<Route path="work" element={<WorkPage />} />
-				<Route path="work/:projectSlug" element={<ProjectPage />} />
-				<Route path="lab" element={<LabPage />} />
-				<Route path="notes" element={<NotesPage />} />
-				<Route path="about" element={<AboutPage />} />
-				<Route path="changelog" element={<ChangelogPage />} />
-				<Route path="*" element={<NotFoundPage />} />
-			</Route>
+		<>
+			<Routes>
+				<Route element={<AppLayout />}>
+					<Route index element={<HomePage />} />
+					<Route path="work" element={<WorkPage />} />
+					<Route path="work/:projectSlug" element={<ProjectPage />} />
+					<Route path="lab" element={<LabPage />} />
+					<Route path="notes" element={<NotesPage />} />
+					<Route path="about" element={<AboutPage />} />
+					<Route path="changelog" element={<ChangelogPage />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Route>
+			</Routes>
 			<Analytics />
-		</Routes>
+		</>
 	);
 }
