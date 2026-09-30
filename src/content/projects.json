@@ -57,7 +57,16 @@
 		"year": 2026,
 		"role": "Design + Fullstack",
 		"description": "An online free to play multiplayer mahjong game with a focus on accessibility and cross-platform play.",
-		"technologies": ["TypeScript", "React", "Docker", "Express", "Websockets"]
+		"technologies": ["TypeScript", "React", "Docker", "Express", "Websockets"],
+		"sections": {
+			"context": "Mahjong is a complex game with many rules and variations. Existing online implementations are often inaccessible or limited to specific platforms.",
+			"problem": "My friends and I were infected with a mahjong craze and we could not find a platform that allowed us to play together online with the variations we wanted.",
+			"solution": "A web-based platform that allows players to join games and play in real-time with others.",
+			"implementation": "The frontend is built with React and TypeScript, while the backend uses Express and Websockets for real-time communication. Docker is used for deployment.",
+			"challenges": "Ensuring smooth real-time gameplay and handling different mahjong rule sets required careful design of the game logic and state management.",
+			"outcome": "A playable online mahjong platform that is accessible from a web browser.",
+			"nextIteration": "Improve the website design by making it more responsive to more smaller devices."
+		}
 	},
 	{
 		"slug": "resource-planner",
