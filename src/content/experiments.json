@@ -1,4 +1,20 @@
 [
-  {"slug": "retrieval-evaluation", "id": "004", "name": "Retrieval evaluation fixtures", "hypothesis": "Small, repeatable test sets make RAG changes easier to reason about.", "setup": "Representative job queries · fixed source set · source-grounded grading", "result": "A baseline for comparing retrieval changes without relying on intuition alone.", "status": "in progress"},
-  {"slug": "tool-calling", "id": "003", "name": "Tool-calling agent boundaries", "hypothesis": "Narrow tools produce more predictable agent behaviour than broad utilities.", "setup": "Read-only operations · explicit schemas · audit-friendly responses", "result": "The interface contract matters at least as much as the model prompt.", "status": "documented"}
+	{
+		"slug": "retrieval-evaluation",
+		"id": "004",
+		"name": "Retrieval evaluation fixtures",
+		"hypothesis": "Small, repeatable test sets make RAG changes easier to reason about.",
+		"setup": "Representative job queries · fixed source set · source-grounded grading",
+		"result": "A baseline for comparing retrieval changes without relying on intuition alone.",
+		"status": "in progress"
+	},
+	{
+		"slug": "tool-calling",
+		"id": "003",
+		"name": "Tool-calling agent boundaries",
+		"hypothesis": "Narrow tools produce more predictable agent behaviour than broad utilities.",
+		"setup": "Read-only operations · explicit schemas · audit-friendly responses",
+		"result": "The interface contract matters at least as much as the model prompt.",
+		"status": "documented"
+	}
 ]
